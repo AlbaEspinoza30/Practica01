@@ -27,7 +27,7 @@ class EntradaController extends Controller
             ->orderBy('entrada.id', 'desc')
             ->paginate(10);
 
-        return view('entrada.index', compact(['registros', 'texto']));
+        return view('entradas.index', compact(['registros', 'texto']));
     }
 
     /**
@@ -37,7 +37,7 @@ class EntradaController extends Controller
     {
         $entrada = new Entrada();
         $eventos = DB::table('evento')->select('id', 'nombre')->orderBy('nombre', 'asc')->get();
-        return view('entrada.action', compact('entrada', 'eventos'));
+        return view('entradas.action', compact('entrada', 'eventos'));
     }
 
     /**
@@ -57,7 +57,7 @@ class EntradaController extends Controller
         $registro->dni = $request->input('dni');
         $registro->save();
 
-        return redirect()->route('entrada.index')->with('mensaje', 'Registro creado satisfactoriamente.');
+        return redirect()->route('entradas.index')->with('mensaje', 'Registro creado satisfactoriamente.');
     }
 
     /**
@@ -75,7 +75,7 @@ class EntradaController extends Controller
     {
         $entrada = Entrada::findOrFail($id);
         $eventos = DB::table('evento')->select('id', 'nombre')->orderBy('nombre', 'asc')->get();
-        return view('entrada.action', compact(['entrada', 'eventos']));
+        return view('entradas.action', compact(['entrada', 'eventos']));
     }
 
     /**
@@ -96,7 +96,7 @@ class EntradaController extends Controller
         $registro->dni = $request->input('dni');
         $registro->save();
 
-        return redirect()->route('entrada.index')->with('mensaje', 'Registro actualizado satisfactoriamente.');
+        return redirect()->route('entradas.index')->with('mensaje', 'Registro actualizado satisfactoriamente.');
     }
 
     /**
@@ -106,6 +106,6 @@ class EntradaController extends Controller
     {
         $registro = Entrada::findOrFail($id);
         $registro->delete();
-        return redirect()->route('entrada.index')->with('mensaje', 'Registro eliminado correctamente.');
+        return redirect()->route('entradas.index')->with('mensaje', 'Registro eliminado correctamente.');
     }
 }

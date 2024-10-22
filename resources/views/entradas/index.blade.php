@@ -14,7 +14,7 @@
                                 class="btn btn-success"><i class="fas fa-file-csv"></i> CSV</a></h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('entrada.index')}}" method="get">
+                        <form action="{{route('entradas.index')}}" method="get">
                             <div class="input-group">
                                 <input name="texto" type="text" class="form-control" value="{{$texto}}">
                                 <div class="input-group-append">
@@ -80,7 +80,7 @@
  
                                       
                                     </tr>
-                                    @include('entrada.delete')
+                                    @include('entradas.delete')
                                     @endforeach
                                     @endif
                                 </tbody>

@@ -38,13 +38,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="liCategoria" href="{{route('evento.index')}}" class="nav-link">
+                            <a id="liCategoria" href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Eventos</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="liProducto" href="{{route('entrada.index')}}" class="nav-link">
+                            <a id="liProducto" href="{{route('entradas.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Entradas</p>
                             </a>
